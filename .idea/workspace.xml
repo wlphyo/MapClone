@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eb5cec1d-b59f-4fbe-a9f0-12fcee1eab25" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/AStarSolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw4/bearmaps/proj2ab/ArrayHeapMinPQTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5/creatures/TestClorus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/ArrayHeapMinPQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/AStarGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/AStarGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/SolutionPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/SolutionPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/WeightedEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/WeightedEdge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/integerhoppuzzle/DemoIntegerHopPuzzleSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/integerhoppuzzle/DemoIntegerHopPuzzleSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/lectureexample/DemoAlternateExampleSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/lectureexample/DemoAlternateExampleSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/lectureexample/DemoLectureExampleSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/lectureexample/DemoLectureExampleSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/slidingpuzzle/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/slidingpuzzle/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/slidingpuzzle/BoardGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/slidingpuzzle/BoardGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/slidingpuzzle/DemoRunSeveralPuzzles.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/slidingpuzzle/DemoRunSeveralPuzzles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/slidingpuzzle/DemoSlidingPuzzleSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/slidingpuzzle/DemoSlidingPuzzleSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/wordladderpuzzle/DemoWordPuzzleSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/wordladderpuzzle/DemoWordPuzzleSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Plip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Plip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/TestPlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/TestPlip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-sp19" beforeDir="false" afterPath="$PROJECT_DIR$/../library-sp19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/TestOffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/TestOffByOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/TestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2ab/bearmaps/ArrayHeapMinPQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/ArrayHeapMinPQTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2ab/bearmaps/ExtrinsicMinPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/ExtrinsicMinPQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2ab/bearmaps/KDTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/KDTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bearmaps/proj2c/server/handler/impl/RasterAPIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/bearmaps/proj2c/server/handler/impl/RasterAPIHandler.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gjocpImeiRZ8UY9NWa1OnDBn0c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../library-sp19/javalib/proj2c" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MapServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bearmaps.proj2c.MapServer" />
+      <module name="proj2c" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bearmaps.proj2c.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MapServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eb5cec1d-b59f-4fbe-a9f0-12fcee1eab25" name="Default Changelist" comment="" />
+      <created>1598637447358</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598637447358</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="261" y="263" width="735" height="520" key="FileChooserDialogImpl" timestamp="1598638119904">
+      <screen x="0" y="27" width="1278" height="979" />
+    </state>
+    <state x="261" y="263" width="735" height="520" key="FileChooserDialogImpl/0.27.1278.979@0.27.1278.979" timestamp="1598638119904" />
+    <state width="1232" height="251" key="GridCell.Tab.0.bottom" timestamp="1598654628852">
+      <screen x="0" y="27" width="1278" height="979" />
+    </state>
+    <state width="1232" height="251" key="GridCell.Tab.0.bottom/0.27.1278.979@0.27.1278.979" timestamp="1598654628852" />
+    <state width="1232" height="251" key="GridCell.Tab.0.center" timestamp="1598654628851">
+      <screen x="0" y="27" width="1278" height="979" />
+    </state>
+    <state width="1232" height="251" key="GridCell.Tab.0.center/0.27.1278.979@0.27.1278.979" timestamp="1598654628851" />
+    <state width="1232" height="251" key="GridCell.Tab.0.left" timestamp="1598654628851">
+      <screen x="0" y="27" width="1278" height="979" />
+    </state>
+    <state width="1232" height="251" key="GridCell.Tab.0.left/0.27.1278.979@0.27.1278.979" timestamp="1598654628851" />
+    <state width="1232" height="251" key="GridCell.Tab.0.right" timestamp="1598654628852">
+      <screen x="0" y="27" width="1278" height="979" />
+    </state>
+    <state width="1232" height="251" key="GridCell.Tab.0.right/0.27.1278.979@0.27.1278.979" timestamp="1598654628852" />
+    <state x="122" y="94" width="1024" height="852" key="SettingsEditor" timestamp="1598638199807">
+      <screen x="0" y="27" width="1278" height="979" />
+    </state>
+    <state x="122" y="94" width="1024" height="852" key="SettingsEditor/0.27.1278.979@0.27.1278.979" timestamp="1598638199807" />
+  </component>
+</project>
