@@ -17,8 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static bearmaps.proj2c.utils.Constants.SEMANTIC_STREET_GRAPH;
-import static bearmaps.proj2c.utils.Constants.ROUTE_LIST;
+import static bearmaps.proj2c.utils.Constants.*;
 
 /**
  * Handles requests from the web browser for map images. These images
@@ -84,14 +83,118 @@ public class RasterAPIHandler extends APIRouteHandler<Map<String, Double>, Map<S
      */
     @Override
     public Map<String, Object> processRequest(Map<String, Double> requestParams, Response response) {
-        System.out.println("yo, wanna know the parameters given by the web browser? They are:");
+//        System.out.println("yo, wanna know the parameters given by the web browser? They are:");
         System.out.println(requestParams);
         Map<String, Object> results = new HashMap<>();
+        /**check if the parameters are valid*/
+        boolean query_success = checkParams(requestParams);
+        results.put("query_success",query_success);
+        System.out.println(query_success);
+
+        /**Given a query, find all the filenames tha go with that query
+         * subgoals:
+         *  1)Figure out the correct depth for the query.*/
+        int depth = calculateDepth(requestParams);
+        results.put("depth",depth);
+        System.out.println(depth);
+
+        /**2)Figure out how to compute the bounding box for a given filename
+         * We have depth. so we need x and y of each ul and lr.
+         * */
+        double inputLon = requestParams.get("ullon");
+        double inputLat = requestParams.get("ullat");
+        Map<String,Object> upperLeft = calculateBoundingBox(inputLon,inputLat,depth,"ul");
+        inputLon = requestParams.get("lrlon");
+        inputLat = requestParams.get("lrlat");
+        Map<String,Object> lowerRight = calculateBoundingBox(inputLon,inputLat,depth,"lr");
+        /**put upperLeft and LowerRight, which are calculated into result as raster_ul_* */
+        results.put("raster_ul_lon", upperLeft.get("lon"));
+        results.put("raster_ul_lat", upperLeft.get("lat"));
+        results.put("raster_lr_lon", lowerRight.get("lon"));
+        results.put("raster_lr_lat", lowerRight.get("lat"));
+        System.out.println("raster_ul_lon "+upperLeft.get("lon"));
+        System.out.println("raster_ul_lat "+upperLeft.get("lat"));
+        System.out.println("raster_lr_lon "+lowerRight.get("lon"));
+        System.out.println("raster_lr_lat "+lowerRight.get("lat"));
+
+        /**3)Figure out how many tiles you will need*/
+
         System.out.println("Since you haven't implemented RasterAPIHandler.processRequest, nothing is displayed in "
                 + "your browser.");
         return results;
     }
 
+    /**calculate the bounding box x,y coordinates given lon,lat,depth and (upper left or lower right)*/
+    private Map<String,Object> calculateBoundingBox(double lon,double lat,int depth, String pos){
+        Map<String,Object> result = new HashMap<>();
+        double foundLon = ROOT_ULLON;
+        double foundLat = ROOT_LRLAT;
+        /**if lon is not within box, set the box to ROOT_**/
+        if(lon < foundLon) lon = foundLon;
+        if(lat < foundLat) lat = foundLat;
+        /**dD_xk_yk where k= 2^Depth - 1 */
+        int k = (int)(Math.pow(2,depth)-1);
+        double diffLon = (ROOT_LRLON-ROOT_ULLON) / Math.pow(2,depth);
+        double diffLat = (ROOT_ULLAT-ROOT_LRLAT) / Math.pow(2,depth);
+        double lonToUse = Math.floor(Math.abs(lon-ROOT_ULLON)/diffLon);
+        double latToUse = Math.floor(Math.abs(lat-ROOT_ULLAT)/diffLat);
+        int xHorizontal = (int) lonToUse;
+        int yVertical = (int) latToUse;
+        if(pos == "ul"){
+            foundLon= ROOT_ULLON + (xHorizontal*diffLon);
+            foundLat= -(yVertical*diffLat) + ROOT_ULLAT;
+        }
+        if(pos == "lr"){
+            foundLon= ROOT_ULLON + ((xHorizontal+1)*diffLon);
+            foundLat=-((yVertical+1)*diffLat) + ROOT_ULLAT;
+        }
+        if(xHorizontal<0) xHorizontal=0;
+        else if(xHorizontal >k ) xHorizontal = k;
+        result.put("x",xHorizontal);
+        if(yVertical<0) yVertical=0;
+        else if(yVertical > k) yVertical = k;
+        result.put("y",yVertical);
+        /**make sure it is within boudnaries after calculation*/
+        if(foundLon>ROOT_LRLON) foundLon = ROOT_LRLON;
+        if(foundLon<ROOT_ULLON) foundLon = ROOT_ULLON;
+        result.put("lon",foundLon);
+        if(foundLat>ROOT_ULLAT) foundLat = ROOT_ULLAT;
+        if(foundLat<ROOT_LRLAT) foundLat = ROOT_LRLAT;
+        result.put("lat",foundLat);
+        return result;
+    }
+    /**check if given longitude and latitude are valid or not*/
+    private boolean checkParams(Map<String,Double> requestParams){
+        double lrlon = requestParams.get("lrlon");
+        double lrlat = requestParams.get("lrlat");
+        double ullon = requestParams.get("ullon");
+        double ullat = requestParams.get("ullat");
+        /**make sure numbers are valid*/
+        if(lrlon<ullon || lrlat>ullat) return false;
+        /**make sure they are within boundaries of world map*/
+        if((lrlon<ROOT_ULLON)&&(lrlat>ROOT_ULLAT)
+                &&(ullon<ROOT_LRLON)&&(ullat<ROOT_LRLAT)) return false;
+        return true;
+    }
+    private int calculateDepth(Map<String,Double> requestParams){
+        int depth;
+        /**LonDPP  = (lrlon-ullon)/w */
+        double lrlon=  requestParams.get("lrlon");
+        double ullon = requestParams.get("ullon");
+        double width = requestParams.get("w");
+        double LonDPP = (lrlon-ullon)/width;
+        /**Compute the LonDPP of an image file. start from depth 0 tile.
+         * LonDPP = (ROOT_LRLON-ROOT_ULLON)/TILESIZE*/
+        double worldMapLonDPP = (ROOT_LRLON-ROOT_ULLON)/TILE_SIZE;
+        /**Example: if LonDPP = 0.00008630532, For image depth 1 (e.g. d1_x0_y0), every tile has LonDPP(in this case
+         * worldMapLonDPP) equal to 0.000171661376953125 (for an explanation of why, see the next section)
+         * which is greater than the LonDPP of the query box, and is thus unusable because resolution would be poor.
+         * We need go to lowest depth as possible while keeping the LonDPP less WorldMapLonDPP*/
+        for(depth=0;LonDPP < worldMapLonDPP && depth < 7;depth++){
+            worldMapLonDPP /= 2; /**this return d2 image file*/
+        }
+        return depth;
+    }
     @Override
     protected Object buildJsonResponse(Map<String, Object> result) {
         boolean rasterSuccess = validateRasteredImgParams(result);
